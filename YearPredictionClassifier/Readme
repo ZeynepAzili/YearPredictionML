@@ -1,0 +1,22 @@
+Bu çalışmanın amacı, Türkçe akademik tezlerin başlık ve özet metinlerinden yola çıkarak, 
+tezin yayınlandığı yılı tahmin eden bir makine öğrenmesi modeli geliştirmektir. 
+Tez metinleri, içerdikleri terminoloji ve akademik dil açısından zamanla değişim gösterdiğinden, 
+bu problem her yıl bir sınıf olarak ele alınıp multiclass classification olarak değerlen dirilmiştir. 
+Ancak yıl tahminindeki 2003 olan bir yıl 2005 tahminlenmesiyle, 2003 olan bir yıl 2024 tahminlenmesi 
+arasında hata açısından büyük farklılık vardır. Bu nedenle sonuçlar ort hatayı ölçümleyen 
+regresyon metrikleri RMSE ve MAE değerleriyle değerlendirilmiş olup hibrit bir çalışma yapılmıştır.
+Regresyon problemi olarak da ele aldığımız farklı optimizasyon ve çözüm tekniklerini de incelemek isterseniz
+raporda bulabilirsiniz. 
+
+Çalışma kapsamında, tekil sınıflandırıcılar yerine, genelleme yeteneği daha yüksek olan kolektif öğrenme
+(ensemble learning)yöntemleri (Bagging, Random Subspace ve Random Forest) kullanılmıştır.
+
+Model olarak : ytu-ce-cosmos/turkish-e5-large modeli kullanılmıştır. 
+
+Çalışmada HuggingFace platformunda yer alan umutertugrul/turkish-academic- theses-dataset veri seti kullanılmıştır.
+2001-2025 yılları (dahil) arasındaki tezler filtrelenmiştir.
+
+title_tr: Tezin Türkçe başlığı.
+abstract_tr: Tezin Türkçe özeti.
+tab: Tezin başlık+özet temsili
+year: Tezin yayınlandığı yıl (Hedef değişken)
